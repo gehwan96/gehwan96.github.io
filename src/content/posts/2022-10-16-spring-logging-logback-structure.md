@@ -397,9 +397,15 @@ additivity는 상위 레벨의 로거에 전달할지 전달 유무를 설정하
 현재 팀 서비스 내부에서 사용하는 logback 기능은 대표적으로는 다음과 같습니다.
 
 1. ~~**SmtpAppender를 이용한 에러메일 발송** (Deprecated - Audit Log로 전환)~~
+
+   ![SMTPAppender로 발송된 에러 메일 예시](/images/spring-logging-logback-structure/img-04.png)
+
 2. **RollingFileAppender를 이용한 로그 파일 롤오버**
    1. 압축 기능 (`batch.log.%d{yyyy-MM-dd}.%i.log.gz`)
    2. 일정 기간 유지 후 삭제
+
+   ![일자별로 롤오버·압축된 로그 파일 목록](/images/spring-logging-logback-structure/img-05.png)
+
 3. **AsyncAppender를 이용한 logncrash 이용 (Audit Log 생성)**
 4. **로컬에서 에러 출력용으로 사용하는 ConsoleAppender**
 
